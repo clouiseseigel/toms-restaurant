@@ -224,8 +224,7 @@ $('#reservationsTable').on('click', '.delete', function(e) {
   var id = $(e.target).parent().data('id')
   var reservationReference = database.ref('reservations/' + id)
   reservationReference.remove()
-});    
-
+});
 
 // listen for reservation changes in the database
 function getReservations(msg) {
@@ -236,7 +235,7 @@ function getReservations(msg) {
 
     // assign Firebase object to a variable
     var allReservations = results.val();
-    console.log("results: " + results);
+    console.log(allReservations);
 
     // remove all reservations from DOM before appending list reservations
     console.log("Empty the reservations table");
