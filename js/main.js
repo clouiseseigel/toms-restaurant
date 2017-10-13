@@ -185,7 +185,6 @@ var marker = new google.maps.Marker({
 
 // Set up and initialize Firebase
 
-
 // this information is provided by Firebase when you create the project
 var config = {
     apiKey: "AIzaSyAGWWgvacPrxHhAswNAEqjSpKzdHNhtWm0",
@@ -205,8 +204,8 @@ var reservationData = {};
 // listen for reservation form submit and use form data
 $('#makeReservation').on('submit', function(event) {
   event.preventDefault();
-  reservationData.name = $('.reservation-name').val();
-  reservationData.day = $('.reservation-day').val();
+  reservationData.name = $('.reservationName').val();
+  reservationData.day = $('.reservationDay').val();
 
   // create a collection for reservations
   var reservationReference = database.ref('reservations');
@@ -215,17 +214,18 @@ $('#makeReservation').on('submit', function(event) {
   reservationReference.push(reservationData);
 
   // reset the form fields
-  $('.reservation-name').val('');
-  $('.reservation-day').val('');
+  $('.reservationName').val('');
+  $('.reservationDay').val('');
 
 });
 
-<!--
 // listen for when a reservation is deleted
-$(".reservationsBody").on("click", function() {
-  console.log($(this));
-});
--->
+$('#reservationsTable').on('click', '.delete', function(e) {
+  var id = $(e.target).parent().data('id')
+  var reservationReference = database.ref('reservations/' + id)
+  reservationReference.remove()
+});    
+
 
 // listen for reservation changes in the database
 function getReservations(msg) {
