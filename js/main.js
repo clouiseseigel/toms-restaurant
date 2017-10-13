@@ -221,7 +221,7 @@ $('#makeReservation').on('submit', function(event) {
 
 // listen for when a reservation is deleted
 $('#reservationsTable').on('click', '.delete', function(e) {
-  var id = $(e.target).parent().data('id')
+  var id = $(e.target).parent().parent().data('id')
   var reservationReference = database.ref('reservations/' + id)
   reservationReference.remove()
 });
@@ -249,7 +249,7 @@ function getReservations(msg) {
       var day = allReservations[entry].day;
       var referenceId = entry;
 
-      var tableRow = "<tr data-id=" + referenceId + "><td>" + name + "</td><td>" + day + "</td></tr>";
+      var tableRow = "<tr data-id=" + referenceId + "><td>" + name + "</td><td>" + day + "</td><td><a class='delete'>Cancel</a></tr>";
       $('#reservationsTable > tbody:last-child').append(tableRow);
 
     } 
