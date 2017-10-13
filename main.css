@@ -181,7 +181,9 @@ blockquote {
 	text-align: center;
 }
 
-
-
+td a {
+	cursor: pointer;
+	color: DarkBlue;
+}
 
 
