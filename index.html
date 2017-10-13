@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tom's Restaurant</title>
+
+	<!-- css file and Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Shade|Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body class="blue">
+		<h1 class="centerText">Tom's Restaurant</h1>
+				<h4 class="centerText">"<em>The</em> Place for BIG Salad | The Best in Brooklyn Since 2017"</h4>
+
+					<img class="hero" src="images/toms-restaurant.jpg" alt="Tom's Restaurant">
+
+		<h2 class="centerText">Reservations</h2>
+			<div class="reservations">
+						<h4 class="centerText">Make a Reservation</h4>
+							<form id="makeReservation">
+								<label for="name">Name</label>
+								<input type="text" class="reservationName" name="name" id="name" placeholder="Your Name, please" required>
+								<br>
+								<label for="day" id="two">Day</label>
+								<input type="text" class="reservationDay" name="day" id="day" placeholder="Please enter the day of the week" required>
+								<br>
+								<label for="submit"></label>
+								<input type="submit" value="Submit" class="submitBtn" name="submit" id="submitBtn">
+							</form>
+			</div>
+
+			<div class="confirm">
+						<h4 class="centerText">Existing Reservations</h4>
+							<table id="reservationsTable">
+							<thead>
+								<th class="centerText">Name</th>
+								<th class="centerText">Day</th>
+							</thead>
+							
+							<tbody class="reservationsBody">
+							
+							</tbody>
+							</table>
+							<br>
+								<label for="cancel"></label>
+								<input type="button" value="Cancel Reservation" class="cancelBtn" name="cancel" id="cancelBtn"> 
+								
+								<br>
+								<br>
+								<br>
+								<br>
+			</div>
+
+	<div class="dine">	
+			<h2 class="centerText">Come Dine With Us</h2>
+			
+			
+					<!-- Insert google map here -->
+			
+					<div id="map"></div>		
+	</div>		
+
+	<div class="reviews">	
+			<h2 class="centerText">Customer Reviews</h2>
+				
+				<div class="polaroid">
+  					<img src="images/jerry.jpg" alt="Photo of Jerry Seingfeld" style="width:100%">
+  				<div class="container">
+					<blockquote>"Big lettuce, big carrots, tomatoes like volleyballs."</blockquote>
+					<p class="whoseQuote">- Jerry Seinfeld, on The BIG Salad</p>
+  				</div>
+				</div>
+	</div>
+
+	<!-- include js  files -->
+
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbt1M_Y1NT5NIZ27O1y0L-PXT5-bEIjs&callback=initMap" async defer></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
