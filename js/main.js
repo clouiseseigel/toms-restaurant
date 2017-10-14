@@ -1,3 +1,16 @@
+// Announce open or closed based on time
+
+var today = new Date(),
+    open = "Yes, We're Open!",
+    closed = "Sorry, Closed!",
+    display = document.getElementById('display');
+
+if (today.getHours() >= 7 && today.getHours() <= 22) {
+    display.innerHTML = open;
+} else {
+    display.innerHTML = closed;
+}
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.8054491, lng: -73.9654415},
@@ -220,10 +233,10 @@ $('#makeReservation').on('submit', function(event) {
 });
 
 // listen for when a reservation is deleted
-$('#reservationsTable').on('click', '.delete', function(e) {
+$('#cancelBtn').on('click', '.delete', function(e) {
   var id = $(e.target).parent().data('id')
-  var reservationReference = database.ref('reservations/' + id)
-  reservationReference.remove()
+  var reservationData = database.ref('reservations/' + id)
+  reservationData.remove()
 });    
 
 
