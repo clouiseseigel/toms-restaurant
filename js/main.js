@@ -233,11 +233,10 @@ $('#makeReservation').on('submit', function(event) {
 });
 
 // listen for when a reservation is deleted
-$('#cancelBtn').on('click', '.delete', function(e) {
-  var id = $(e.target).parent().data('id')
-  var reservationData = database.ref('reservations/' + id)
-  reservationData.remove()
-});    
+$('#cancelReservation').on('click', function () {
+    $('#reservationsTable').empty();
+    updateCount();
+});
 
 
 // listen for reservation changes in the database
