@@ -6,6 +6,7 @@ h1 {
 	font-family: 'Bungee Shade', cursive;
 	color: DarkBlue;
 	text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 10px red, 0 0 10px red, 0 0 10px red, 0 0 20px red;
+	letter-spacing: 5px;
 }
 
 .centerText {
@@ -93,17 +94,14 @@ input {
 .cancelBtn {
 	margin-top: 10px;
 	margin-left: -40px;
-}
-
-#cancelBtn {
 	background-color: DarkBlue;
 	color: white;
 	height: 30px;
 	width: 180px;
 	padding-left: 10px;
-}	
+}
 
-#cancelBtn:hover {
+.cancelBtn:hover {
 	background-color: #60a3f6;
 }
 
