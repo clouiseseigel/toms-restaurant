@@ -232,12 +232,12 @@ $('#makeReservation').on('submit', function(event) {
 
 });
 
-// listen for when a reservation is deleted
-$('#cancelReservation').on('click', function () {
-    $('#reservationsTable').empty();
-    updateCount();
+ // listen for when a reservation is deleted
+ $('#reservationsTable').on('click', '.delete', function(e) {
+    var id = $(e.target).parent().parent().data('id')
+    var reservationReference = database.ref('reservations/' + id)
+    reservationReference.remove()
 });
-
 
 // listen for reservation changes in the database
 function getReservations(msg) {
@@ -248,7 +248,7 @@ function getReservations(msg) {
 
     // assign Firebase object to a variable
     var allReservations = results.val();
-    console.log("results: " + results);
+    console.log(allReservations);
 
     // remove all reservations from DOM before appending list reservations
     console.log("Empty the reservations table");
@@ -262,7 +262,7 @@ function getReservations(msg) {
       var day = allReservations[entry].day;
       var referenceId = entry;
 
-      var tableRow = "<tr data-id=" + referenceId + "><td>" + name + "</td><td>" + day + "</td></tr>";
+      var tableRow = "<tr data-id=" + referenceId + "><td>" + name + "</td><td>" + day + "</td><td><a class='delete'>Cancel</a></tr>";
       $('#reservationsTable > tbody:last-child').append(tableRow);
 
     } 
