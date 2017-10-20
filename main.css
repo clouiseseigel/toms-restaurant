@@ -18,6 +18,11 @@ h4 {
 	color: DarkSlateGrey;
 }
 
+h3 {
+	font-family: 'Ubuntu', sans-serif;
+	color: DarkSlateGrey;
+}
+
 .hero {
 	display: block;
     margin: auto;
@@ -30,6 +35,7 @@ h2 {
 	font-family: 'Bungee Inline', cursive;
 	color: DarkSlateGray;
 	font-size: 28px;
+	letter-spacing: 1px;
 }
 
 .hours {
@@ -91,20 +97,6 @@ input {
 	background-color: #60a3f6;
 }
 
-.cancelBtn {
-	margin-top: 10px;
-	margin-left: -40px;
-	background-color: DarkBlue;
-	color: white;
-	height: 30px;
-	width: 180px;
-	padding-left: 10px;
-}
-
-.cancelBtn:hover {
-	background-color: #60a3f6;
-}
-
 .confirm {
 	width: 45%;
 	float: right;
@@ -118,21 +110,30 @@ table {
 }
 
 table, th, td {
-	border: 1px solid LightSlateGrey;
+	border: 2px solid LightGrey;
 }
 
 th {
 	font-family: 'Ubuntu', sans-serif;
 	color: DarkSlateGrey;
 	font-size: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 td {
-	padding-left: .5em;
+	padding-left: 10px;
 	padding-top: .2em;
 	padding-bottom: .2em;
 	width: 50%;
 }
+
+td a {
+ 	cursor: pointer;
+ 	color: DarkBlue;
+ }
 
 .dine {
 	display: block;
